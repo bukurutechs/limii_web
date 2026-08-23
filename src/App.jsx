@@ -10,7 +10,6 @@ import {
   Search,
   ShieldCheck,
   ShoppingCart,
-  Sparkles,
   Truck,
   X,
 } from 'lucide-react'
@@ -49,8 +48,7 @@ const benefits = [
 function Logo({ light = false }) {
   return (
     <a className={light ? 'logo logo-light' : 'logo'} href="#top" aria-label="Limii home">
-      <span className="logo-mark"><span></span><span></span><span></span></span>
-      <span>Limii</span>
+      <img src="/limii-logo.png" alt="Limii" />
     </a>
   )
 }
@@ -129,7 +127,6 @@ export default function App() {
       <main>
         <section className="hero container">
           <div className="hero-copy">
-            <div className="eyebrow"><Sparkles size={16}/> Built for healthcare businesses</div>
             <h1>Medicine ordering, made <em>effortless.</em></h1>
             <p className="hero-text">Find medicines and medical supplies, place your order, and follow its progress—all from one simple platform.</p>
             <div className="hero-actions">
