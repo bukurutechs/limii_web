@@ -14,7 +14,7 @@ import {
   Truck,
   X,
 } from 'lucide-react'
-import { useState } from 'react'
+import React, { useState } from 'react'
 
 const facilityTypes = ['Pharmacies', 'ADDOs', 'Clinics', 'Hospitals']
 
