@@ -45,10 +45,19 @@ const benefits = [
   ['Reliable support', 'Get help whenever you need it.'],
 ]
 
-function Logo({ light = false }) {
+function Logo({ light = false, compact = false }) {
+  const width = compact ? 64 : light ? 124 : 112
+  const height = compact ? 26 : 42
+
   return (
     <a className={light ? 'logo logo-light' : 'logo'} href="#top" aria-label="Limii home">
-      <img src="/limii-logo.png" alt="Limii" />
+      <img
+        src="/limii-logo.png"
+        alt="Limii"
+        width={width}
+        height={height}
+        style={{ width: `${width}px`, height: `${height}px`, maxWidth: `${width}px`, objectFit: 'contain' }}
+      />
     </a>
   )
 }
@@ -62,7 +71,7 @@ function ProductMockup() {
         <div className="phone-top"><span></span></div>
         <div className="phone-screen">
           <div className="app-head">
-            <Logo />
+            <Logo compact />
             <div className="avatar">HM</div>
           </div>
           <p className="hello">Good morning</p>
