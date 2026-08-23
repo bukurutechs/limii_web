@@ -14,6 +14,7 @@ import {
   X,
 } from 'lucide-react'
 import React, { useState } from 'react'
+import { DeleteAccountPage, PrivacyPolicyPage } from './LegalPages'
 
 const facilityTypes = ['Pharmacies', 'ADDOs', 'Clinics', 'Hospitals']
 
@@ -109,6 +110,10 @@ function ProductMockup() {
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const path = window.location.pathname.replace(/\/$/, '') || '/'
+
+  if (path === '/delete-account') return <DeleteAccountPage />
+  if (path === '/privacy-policy') return <PrivacyPolicyPage />
 
   const closeMenu = () => setMenuOpen(false)
 
@@ -220,7 +225,7 @@ export default function App() {
         <div className="container footer-top">
           <div className="footer-brand"><Logo light/><p>A simpler way for healthcare businesses to order medicines and medical supplies.</p></div>
           <div><b>Platform</b><a href="#how">How it works</a><a href="#why">Why Limii</a><a href="#join">Create account</a></div>
-          <div><b>Help</b><a href="mailto:support@limii.app">Support</a><a href="#privacy">Privacy</a><a href="#terms">Terms</a></div>
+          <div><b>Help</b><a href="mailto:support@limii.app">Support</a><a href="/privacy-policy">Privacy</a><a href="/delete-account">Delete account</a></div>
         </div>
         <div className="container footer-bottom"><span>© 2026 Limii. All rights reserved.</span><span>Fast. Simple. Reliable.</span></div>
       </footer>
